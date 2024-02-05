@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
+import WrappedComponent from '../WrappedComponent';
 
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
+const LikePost = (props) => {
 
   return (
+
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+
+      <button onClick={props.handleClick}>Like Post {props.state}</button>
+
     </div>
+
   )
 }
+
+let componentCall = WrappedComponent(LikePost)
+
+export default componentCall

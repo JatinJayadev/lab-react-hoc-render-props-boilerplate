@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
+import WrappedComponent from '../WrappedComponent';
 
-export default function LikeImage() {
 
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
+const LikeImage = (props) => {
 
   return (
+
     <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
+
+      <button onClick={props.handleClick}>Like Image {props.state}</button>
+
     </div>
+
   )
+
 }
+
+let componentCall = WrappedComponent(LikeImage)
+
+export default componentCall
